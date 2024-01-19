@@ -1,5 +1,9 @@
 ## Pre-requisitos
 
+# Upgrade path
+
+https://access.redhat.com/labs/ocpupgradegraph/update_path/
+
 ### Generar caso proactivo en RedHat Support.
 
 Para generar el must-gather con la info del cluster.
