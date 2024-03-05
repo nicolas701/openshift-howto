@@ -37,6 +37,6 @@ How to and Deep Dive on Openshift Container Platform.
 2. [Administration](workshops/workshop-administration-agosto-2020.pdf)
 
 ## Developments
-1. [Test pod](developments/test-pod.md)
-2. [Scheduling tasks with pods](developments/scheduling-tasks-with-pods.md)
-3. [Root pod in Openshift](developments/root-pod.md)
+1. [Test pod](develpments/test-pod.md)
+2. [Scheduling tasks with pods](develpments/scheduling-tasks-with-pods.md)
+3. [Root pod in Openshift](develpments/root-pod.md)
