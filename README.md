@@ -1,9 +1,8 @@
-Openshift How To Repo
-=====================
+## Openshift How To Repo
 
-How to and Deep Dive on Openshift Container Platform
+How to and Deep Dive on Openshift Container Platform.
 
-# Tabla de Contenido
+
 
 1. [Kubernetes Service Deep Dive](howto/kubernetes-service-deep-dive.md)
 2. [Install clientes en nodo bastion](howto/install-clientes.md)
@@ -36,3 +35,8 @@ How to and Deep Dive on Openshift Container Platform
 
 1. [Development](workshops/workshop-development-agosto-2020.pdf)
 2. [Administration](workshops/workshop-administration-agosto-2020.pdf)
+
+## Developments
+1. [Test pod](howto/test-pod.md)
+2. [Scheduling tasks with pods](howto/scheduling-tasks-with-pods.md)
+3. [Root pod in Openshift](howto/root-pod.md)
