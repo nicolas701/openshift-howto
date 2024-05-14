@@ -1,0 +1,25 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus-instance
+  namespace: observabilidad
+
+spec:
+  # nodeSelector:
+  #   node-role.kubernetes.io/infra: ''
+  serviceAccountName: prometheus-k8s
+  serviceMonitorSelector:
+    matchLabels:
+      service-monitor: available
+  prometheusExternalLabelName: ''
+  probeSelector: {}
+  storage:
+    volumeClaimTemplate:
+      spec:
+        resources:
+          requests:
+            storage: 10Gi
+        storageClassName: gp2
+  replicas: 2
+  ruleSelector: {}
+  replicaExternalLabelName: ''
