@@ -75,7 +75,7 @@ Controlar que el upgrade progrese de manera correcta
 
 * Control de Operadores.
 ```sh
-watch -n 2 'oc get co'
+watch "oc whoami --show-server; echo;oc get co; echo; oc get clusterversion; echo; oc get mcp;"
 ```
 En caso de deseemos ver el detalle de un cluster operator
 
