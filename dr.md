@@ -44,9 +44,18 @@ journalctl -b -3
 oc -n openshift-kube-apiserver logs  kube-apiserver-xxx
 ```
 ## 6. Ver certificados y CO
-```scr
+```sh
 oc get csr
 oc get co
+```
+
+### Aprobar certificados autmpaticamente
+```sh
+kubectl get csr --no-headers | awk '/Pending/ {print $1}' | xargs kubectl certificate approve
+```
+O para Openshfit.
+```sh
+oc get csr --no-headers | awk '/Pending/ {print $1}' | xargs oc adm certificate approve
 ```
 
 ## 7. En los master ver como esta la infra:
@@ -76,3 +85,12 @@ podman run --volume /var/lib/etcd:/var/lib/etcd:Z quay.io/openshift-scale/etcd-p
 
 
 https://access.redhat.com/solutions/5489721
+
+
+## 8. Problemas con operadores
+Si hay algún operador que no se esta actualizando, o no se genera el intall plan para actualizarlo.
+
+https://access.redhat.com/solutions/7003985
+```sh
+oc delete pods -l 'app in (catalog-operator, olm-operator)' -n openshift-operator-lifecycle-manager
+```
