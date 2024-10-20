@@ -94,3 +94,16 @@ https://access.redhat.com/solutions/7003985
 ```sh
 oc delete pods -l 'app in (catalog-operator, olm-operator)' -n openshift-operator-lifecycle-manager
 ```
+
+
+## Chaquear pods - pvc - PV
+
+### NS - POD - PVC -PV
+```sh
+oc get pods --all-namespaces -o custom-columns=NAMESPACE:.metadata.namespace,POD:.metadata.name,PVC:.spec.volumes[*].persistentVolumeClaim.claimName --no-headers | grep -v "<none>" | while read namespace pod pvc; do pv=$(oc get pvc $pvc -n $namespace -o jsonpath='{.spec.volumeName}'); echo "$namespace  $pod  $pvc  $pv"; done
+```
+
+### NS - POD - PVC
+```sh
+kubectl get pods --all-namespaces -o=json | jq -c '.items[] | {name: .metadata.name, namespace: .metadata.namespace, claimName: .spec |  select( has ("volumes") ).volumes[] | select( has ("persistentVolumeClaim") ).persistentVolumeClaim.claimName }'
+```
