@@ -87,6 +87,18 @@ podman run --volume /var/lib/etcd:/var/lib/etcd:Z quay.io/openshift-scale/etcd-p
 https://access.redhat.com/solutions/5489721
 
 
+## Balancer check
+
+```sh
+curl -k -v -H "Authorization: Bearer <your-access-token>" https://<api-server>:6443/api 
+```
+
+`Authorization: Bearer <your-access-token>"` Es que sale del Copy login command.
+
+Luego verificar fields like X-Forwarded-For, Server, or custom headers added by the load balancer or API server to identify the node.
+
+Se puede hacer un watch para ver como cambian las ips. Con `oc get nodes -o wide | grep master` se pueden ver las ips de los masters.
+
 ## 8. Problemas con operadores
 Si hay algún operador que no se esta actualizando, o no se genera el intall plan para actualizarlo.
 
