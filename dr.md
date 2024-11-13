@@ -99,6 +99,8 @@ Luego verificar fields like X-Forwarded-For, Server, or custom headers added by 
 
 Se puede hacer un watch para ver como cambian las ips. Con `oc get nodes -o wide | grep master` se pueden ver las ips de los masters.
 
+Recordar que el balanceador debe chequear ña salida de `https://ip-masters:6433/readyz`. No solo la respuesta, si no que también que responda un OK. De dar fail el balanceador debe quitar al nodo del pool para no seguir distribuyendo el tráfico a un nodo que no esta disponible.
+
 ## 8. Problemas con operadores
 Si hay algún operador que no se esta actualizando, o no se genera el intall plan para actualizarlo.
 
