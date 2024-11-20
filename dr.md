@@ -60,6 +60,10 @@ oc get csr --no-headers | awk '/Pending/ {print $1}' | xargs oc adm certificate 
 
 ## 7. En los master ver como esta la infra:
 
+Ingrasar en un nodo por ssh y ejecutar:
+```sh
+chroot /host
+```
 ### Ver logs kubelet
 ```sh
 journalctl -u kubelet --no-pager -xf
