@@ -1,4 +1,4 @@
-# Actualizaciónd e certificados
+# Actualización de certificados
 
 
 ## Atachar varias CA
