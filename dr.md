@@ -170,3 +170,8 @@ oc get pods --all-namespaces -o custom-columns=NAMESPACE:.metadata.namespace,POD
 ```sh
 kubectl get pods --all-namespaces -o=json | jq -c '.items[] | {name: .metadata.name, namespace: .metadata.namespace, claimName: .spec |  select( has ("volumes") ).volumes[] | select( has ("persistentVolumeClaim") ).persistentVolumeClaim.claimName }'
 ```
+
+
+
+> [!CAUTION]
+> HOLA
